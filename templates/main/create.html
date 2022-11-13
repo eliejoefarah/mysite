@@ -1,0 +1,23 @@
+{% extends "main/layout.html" %}
+
+{% block body %}
+
+<div class="info_box">
+       <h1>Enter Your Info</h1>
+              
+              <form action="{% url 'main:create' %}" method="post">
+              {% csrf_token %}
+              {{ form }}
+              <br>
+              <br>
+              <label for="currencies">choose a currency</label>
+              <select name="currencies" id="currencies">
+                     <option value="usd">USD</option>
+                     <option value="LBP">LBP</option>
+                     <option value="EUR">EUR</option>
+              </select>
+       <p><input type="submit" value="Create"></p> 
+              </form>
+</div>
+       
+{% endblock %}

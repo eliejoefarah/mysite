@@ -1,0 +1,261 @@
+
+
+.topnav {
+  background-color: #333;
+  overflow: auto;
+  
+  
+}
+.table {
+  text-align: center;
+}
+.maintable {
+  border-collapse: collapse;
+  margin:auto;
+  font-size: large;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+tr { display: block; float: left;
+}
+th, td { display: block; }
+
+.namesR , .pricesR , .datesR, .datesM {
+  background-color: #9c0505;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px 80px;
+  
+}
+.namesR{
+  border-top-left-radius: 5px;
+}
+.datesR{
+  border-top-right-radius: 5px;
+}
+
+.maintable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.maintable tbody {
+  border-bottom: 2px solid #9c0505;
+  
+}
+.table {
+  color: #333;
+}
+.home_page {
+  color: #333;
+}
+body {
+  font-family: sans-serif;
+  margin-top: 0%;
+}
+h1 {
+  color:rgb(255, 255, 255);
+  font-family: sans-serif;
+  
+}
+
+form{
+  color:#ccc;
+  font-size: x-large;
+  text-align: left;
+  margin-left: 30%;
+  
+}
+
+.info_box {
+  
+  border:2px solid #ccc; 
+  text-align: center;
+  margin: auto;
+  margin-top: 3%;
+  background-color: #333;
+  border-radius:11px;
+  box-shadow:inset 0px 2px 0px 0px #33302c;
+  width: 42%;
+  
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+input[type=text], select {
+  padding:0.5%; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  
+}
+select {
+  cursor:pointer;
+}
+
+input[type=text]:focus {
+  border-color:#333;
+}
+input[type=number] {
+  padding:0.5%; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type=number]:focus {
+  border-color:#333;
+}
+
+ 
+
+input[type=submit]{
+box-shadow:inset 0px 1px 0px 0px #fce2c1;
+background:linear-gradient(to bottom, rgb(154, 59, 59) 5%, #9c0505 100%);
+background-color:#ab3d3d;
+border-radius:11px;
+border:2px solid #9c0505;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:sans-serif;
+font-size:16px;
+font-weight:bold;
+padding:8px 30px;
+text-decoration:none;
+text-shadow:0px 1px 0px #c33a3a;
+}
+input[type=submit]:hover {
+background:linear-gradient(to bottom, #9c0505 5%, #ca5252 100%);
+background-color:#9c0505;
+}
+input[type=submit]:active {
+position:relative;
+top:1px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #04AA6D;
+  color: rgb(255, 255, 255);
+  margin-top: 0%;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #9c0505;
+  color: white;
+  margin-top: 0%;
+}
+/* only animate if the device supports hover */
+@media (hover: hover) {
+  #creditcard {
+    /*  set start position */
+    transform: translateY(110px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  #money {
+    /*  set start position */
+    transform: translateY(180px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  button:hover #creditcard {
+    transform: translateY(0px);
+    transition: transform 0.2s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+
+  button:hover #money {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button:hover .button__text span {
+  transform: translateY(-0.25rem);
+  transition: transform .2s ease-in-out;
+}
+
+/* styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+
+
+.button {
+  margin-top: 2%;
+  margin-left: 43%;
+  border: none;
+  outline: none;
+  background-color: purple;
+  padding: 1rem 90px 1rem 2rem;
+  position: relative;
+  border-radius: 8px;
+  letter-spacing: 0.7px;
+  background-color: #9c0505;
+  color: #fff;
+  font-size: 21px;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button__svg {
+  position: absolute;
+  overflow: visible;
+  bottom: 6px;
+  right: 0.2rem;
+  height: 140%;
+}
+.back {
+  box-shadow:inset 0px 1px 0px 0px #fce2c1;
+  background:linear-gradient(to bottom, #ab3d3d 5%, #9c0505 100%);
+  background-color:#ab3d3d;
+  border-radius:11px;
+  border:2px solid #9c0505;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  padding:8px 45px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #c33a3a;
+}
+.back:hover {
+  background:linear-gradient(to bottom, #9c0505 5%, #ab3d3d 100%);
+  background-color:#a32d2d;
+  }
+  .back:active {
+  position:relative;
+  top:1px;
+  }
