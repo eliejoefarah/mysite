@@ -68,7 +68,7 @@ def tables(request):
 
 
 def index(request):
-    return render(request, "main/home.html")
+    return render(request, "main/index.html")
 
 
 def create(request):
