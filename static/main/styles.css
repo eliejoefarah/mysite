@@ -46,12 +46,79 @@ th, td { display: block; }
 .table {
   color: #333;
 }
-.home_page {
-  color: #333;
+
+#main_page{
+  display: flex;
+  flex-direction: row;
 }
+
+.home_page {
+  background-color: #333;
+  width: 50vw;
+  height: 100vh;
+  margin-top: 0%;
+  position: relative;
+  
+  
+  }
 body {
   font-family: sans-serif;
-  margin-top: 0%;
+  margin: 0%;
+}
+
+.welcome {
+  position: fixed;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: #9c0505;
+}
+.wrapper{
+  position: fixed;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+
+}
+
+.start{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.start span{
+  position: relative;
+  z-index: 2;
+}
+
+.start:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #9c0505;
+  transition: all .35s;
+}
+
+.start:hover{
+  color: #fff;
+}
+
+.start:hover:after{
+  width: 100%;
 }
 h1 {
   color:rgb(255, 255, 255);
