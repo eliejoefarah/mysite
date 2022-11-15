@@ -42,7 +42,7 @@ class ItemTaskForm(forms.Form):
     item_name = forms.CharField(
         label="item name", widget=forms.Select(choices=NAME_CHOICES))
 
-    item_price = forms.IntegerField(label="item price (USD)")
+    item_price = forms.IntegerField(label="item price (USD)", min_value=0)
 
     item_month = forms.CharField(
         label="month of purchase", widget=forms.Select(choices=MONTH_CHOICES))
