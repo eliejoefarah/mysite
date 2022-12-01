@@ -1,0 +1,20 @@
+{% extends "main/layout.html" %}
+
+
+{% block body %}
+
+<div class="info_box">
+        <h1>add item</h1>
+       <form action="{% url 'main:add' %}" method="post">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <p >
+                
+                <button class="back" onclick="window.location.href='tables';">back</button>
+                <input class="add_page_buttons" type="submit" value="add item">
+        </p>
+       </form>
+      
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "main/layout.html" %}
+
+{% block body %}
+
+<div class="info_box">
+       <h1>Enter Your Info</h1>
+              
+              <form action="{% url 'main:clear' %}" method="post">
+              {% csrf_token %}
+              {{ form }}
+              <br>
+              <br>
+             
+       <p><input type="submit" value="clear"></p> 
+              </form>
+</div>
+       
+{% endblock %}
