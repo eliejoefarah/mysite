@@ -85,8 +85,9 @@ def create(request):
             request.session["salary"] = []
             request.session["salary"] += [salary]
             ExpenseTracker.Savings.set_money(salary, salary)
+            sal = ExpenseTracker.Savings.get_money(salary)
 
-            return HttpResponseRedirect(reverse("main:tables"))
+            return HttpResponseRedirect(reverse("main:tables"), sal)
         else:
             return render(request, "main/create.html", {
                 "forms": form
