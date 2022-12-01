@@ -7,7 +7,7 @@
               
               <form action="{% url 'main:create' %}" method="post">
               {% csrf_token %}
-              {{ form }}
+              {{forms }}
               <br>
               <br>
               <label for="currencies">choose a currency</label>
@@ -16,7 +16,10 @@
                      <option value="LBP">LBP</option>
                      <option value="EUR">EUR</option>
               </select>
-       <p><input type="submit" value="Create"></p> 
+             
+       <p><input type="submit" value="Create">
+              <!-- <button class="create" onclick="window.location.href='tables';">create</button> -->
+       </p> 
               </form>
 </div>
        

@@ -73,6 +73,13 @@ body {
   transform: translate(-50%, -50%);
   color: #9c0505;
 }
+.welcome2{
+  position: fixed;
+  top: 60%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: #9c0505;
+}
 .wrapper{
   position: fixed;
   top: 50%;
@@ -130,7 +137,7 @@ form{
   color:#ccc;
   font-size: x-large;
   text-align: left;
-  margin-left: 30%;
+  margin-left: 20%;
   
 }
 

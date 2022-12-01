@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django import forms
+import ExpenseTracker
 
 
 # Create your views here.
@@ -35,7 +36,7 @@ MONTH_CHOICES = [
 
 class NewTaskForm(forms.Form):
     name = forms.CharField(label="name")
-    salary = forms.IntegerField(label="salary")
+    salary = forms.IntegerField(label="salary", min_value=1)
 
 
 class ItemTaskForm(forms.Form):
@@ -75,17 +76,23 @@ def create(request):
     #salary = request.POST['salary']
     if request.method == "POST":
         form = NewTaskForm(request.POST)
-        if form.is_valid():
-
+        if (form.is_valid()):
             name = form.cleaned_data["name"]
-            request.session["names"] += [name]
+            request.session["name"] = []
+            request.session["name"] += [name]
+
+            salary = form.cleaned_data["salary"]
+            request.session["salary"] = []
+            request.session["salary"] += [salary]
+            ExpenseTracker.Savings.set_money(salary, salary)
+
             return HttpResponseRedirect(reverse("main:tables"))
         else:
             return render(request, "main/create.html", {
-                "form": form
+                "forms": form
             })
     return render(request, "main/create.html", {
-        "form": NewTaskForm()
+        "forms": NewTaskForm()
     })
 
 
@@ -114,3 +121,7 @@ def add(request):
     return render(request, "main/add.html", {
         "form": ItemTaskForm()
     })
+
+
+def Summary(request):
+    return HttpResponse("hello")

@@ -7,5 +7,6 @@ urlpatterns = [
     path("create", views.create, name="create"),
     path("add", views.add, name="add"),
     path("", views.index, name="home"),
-    path("tables", views.tables, name="tables")
+    path("tables", views.tables, name="tables"),
+    path("Summary", views.Summary, name="Summary")
 ]
