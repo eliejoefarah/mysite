@@ -19,7 +19,7 @@ NAME_CHOICES = [
 ]
 
 MONTH_CHOICES = [
-    ('january', 'Januray'),
+    ('january', 'Januaray'),
     ('february', 'February'),
     ('march', 'March'),
     ('april', 'April'),
@@ -72,7 +72,7 @@ def index(request):
     return render(request, "main/index.html")
 
 
-def create(request):
+def create(request, salary):
     #salary = request.POST['salary']
     if request.method == "POST":
         form = NewTaskForm(request.POST)
@@ -84,10 +84,13 @@ def create(request):
             salary = form.cleaned_data["salary"]
             request.session["salary"] = []
             request.session["salary"] += [salary]
-            ExpenseTracker.Savings.set_money(salary)
-            sal = ExpenseTracker.Savings.get_money(salary)
+            Savings = ExpenseTracker.Savings.set_money(salary)
 
-            return HttpResponseRedirect(reverse("main:tables"), sal)
+            #ExpenseTracker.Savings.set_money(salary, salary)
+            context = {}
+            context["some_string"] = ExpenseTracker.Savings.get_money(Savings)
+
+            return render(request, "main/create.html", context)
         else:
             return render(request, "main/create.html", {
                 "forms": form
